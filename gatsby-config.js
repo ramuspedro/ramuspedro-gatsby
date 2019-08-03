@@ -5,8 +5,10 @@ module.exports = {
     author: `@ramuspedro`,
   },
   plugins: [
-    `gatsby-plugin-sass`,
+    `gatsby-plugin-typescript`,
+    'gatsby-plugin-tslint',
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

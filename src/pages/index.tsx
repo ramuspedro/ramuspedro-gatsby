@@ -2,12 +2,12 @@ import 'antd/dist/antd.css';
 import { Link } from "gatsby";
 import React from "react";
 import Image from "../components/image";
-import Layout from "../components/layout";
+import LayoutSite from "../components/layout";
 import SEO from "../components/seo";
 import '../styles/index.scss';
 
 const IndexPage = () => (
-  <Layout>
+  <LayoutSite>
     <SEO title="Pedro Ramos" />
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
@@ -16,7 +16,7 @@ const IndexPage = () => (
       <Image />
     </div>
     <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  </LayoutSite>
 )
 
 export default IndexPage

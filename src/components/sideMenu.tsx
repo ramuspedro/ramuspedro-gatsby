@@ -5,26 +5,16 @@ const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
 const SideMenu = () => (
-  <Sider width={200} style={{ background: '#004AFF' }}>
-    <Row type="flex" style={{display: 'flex', alignContent: 'center'}} justify="center">
+  <Sider width={200} style={{ background: '#004AFF', textAlign: 'center' }}>
+    <Row>
       <Avatar size={64} icon="user" style={{marginBottom: '1rem'}} />
-      <Menu defaultSelectedKeys={['1']} mode="inline">
-        <Menu.Item key="1">
-          <span>HOME</span>
-        </Menu.Item>
-        <Menu.Item key="2">
-          <span>EXPERIENCE</span>
-        </Menu.Item>
-        <Menu.Item key="3">
-          <span>SKILLS</span>
-        </Menu.Item>
-        <Menu.Item key="4">
-          <span>EDUCATION</span>
-        </Menu.Item>
-        <Menu.Item key="5">
-          <span>PROJECTS</span>
-        </Menu.Item>
-      </Menu>
+      <ul className="side-menu">
+        <li>home</li>
+        <li>experience</li>
+        <li>skills</li>
+        <li>education</li>
+        <li>projects</li>
+      </ul>
     </Row>
   </Sider>
 )

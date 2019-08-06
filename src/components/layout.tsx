@@ -27,7 +27,9 @@ const LayoutSite = ({ children }:any) => {
   return (
     <Layout style={{minHeight: '100vh'}}>
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
-      <SideMenu />
+      <div style={{display: 'flex', alignItems: 'center', background: '#004AFF'}}>
+        <SideMenu />
+      </div>
       <ContentSite>
           <main>{children}</main>
       </ContentSite>

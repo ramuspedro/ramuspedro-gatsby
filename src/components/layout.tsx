@@ -25,7 +25,7 @@ const LayoutSite = ({ children }:any) => {
   `)
 
   return (
-    <Layout style={{minHeight: '100vh'}}>
+    <Layout style={{minHeight: '100vh', background: '#DFE3EF'}}>
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
       <div style={{display: 'flex', alignItems: 'center', background: '#004AFF'}}>
         <SideMenu />

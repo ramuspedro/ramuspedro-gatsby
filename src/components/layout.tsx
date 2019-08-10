@@ -5,14 +5,15 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
+import { Layout } from 'antd';
 import { graphql, useStaticQuery } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
-import Header from "./header";
-import "./layout.css";
+import ContentSite from "./content";
+import SideMenu from "./sideMenu";
 
 
-const Layout = ({ children }:any) => {
+const LayoutSite = ({ children }:any) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -24,29 +25,20 @@ const Layout = ({ children }:any) => {
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+    <Layout style={{minHeight: '100vh', background: '#DFE3EF'}}>
+      {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
+      <div style={{display: 'flex', alignItems: 'center', background: '#004AFF'}}>
+        <SideMenu />
       </div>
-    </>
+      <ContentSite>
+          <main>{children}</main>
+      </ContentSite>
+    </Layout>
   )
 }
 
-Layout.propTypes = {
+LayoutSite.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default LayoutSite

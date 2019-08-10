@@ -12,5 +12,10 @@
             color: $main-color;
             font-family: $font-bold;
         }
+        &.active {
+            background: $background;
+            color: $main-color;
+            font-family: $font-bold;
+        }
     }
 }

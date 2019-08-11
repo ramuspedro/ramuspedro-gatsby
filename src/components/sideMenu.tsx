@@ -1,14 +1,29 @@
 import { Avatar, Layout, Menu, Row } from 'antd';
 import { Link } from "gatsby";
 import React from "react";
+import styled from 'styled-components';
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
+const SiderResponsive = styled(Sider)`
+  .ant-avatar {
+    margin-bottom: 1rem;
+  }
+  @media (max-width: 1170px) {
+    ul {
+      display: none;
+    }
+    .ant-avatar {
+      margin-top: 1rem;
+    }
+  }
+`;
+
 const SideMenu = () => (
-  <Sider width={200} style={{ background: '#004AFF', textAlign: 'center' }}>
+  <SiderResponsive width={200} style={{ background: '#004AFF', textAlign: 'center' }}>
     <Row>
-      <Avatar size={64} icon="user" style={{marginBottom: '1rem'}} />
+      <Avatar size={64} icon="user"/>
       <ul className="side-menu">
         <Link to="/"><li className="active">home</li></Link>
         <li>experience</li>
@@ -17,7 +32,7 @@ const SideMenu = () => (
         <li>projects</li>
       </ul>
     </Row>
-  </Sider>
+  </SiderResponsive>
 )
 
 

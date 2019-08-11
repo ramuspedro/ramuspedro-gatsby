@@ -9,6 +9,7 @@ import { Layout } from 'antd';
 import { graphql, useStaticQuery } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
+import styled from 'styled-components';
 import ContentSite from "./content";
 import SideMenu from "./sideMenu";
 
@@ -24,16 +25,23 @@ const LayoutSite = ({ children }:any) => {
     }
   `)
 
+  const LayoutResponsive = styled(Layout)`
+    @media (max-width: 1170px) {
+      flex-direction: column !important;
+    }
+  `;
+
   return (
-    <Layout style={{minHeight: '100vh', background: '#DFE3EF'}}>
+    <LayoutResponsive style={{minHeight: '100vh', background: '#DFE3EF'}}>
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
       <div style={{display: 'flex', alignItems: 'center', background: '#004AFF'}}>
         <SideMenu />
+        <button className="menu-button"/>
       </div>
       <ContentSite>
           <main>{children}</main>
       </ContentSite>
-    </Layout>
+    </LayoutResponsive>
   )
 }
 

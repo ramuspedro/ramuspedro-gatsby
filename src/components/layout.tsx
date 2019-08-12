@@ -11,10 +11,11 @@ import PropTypes from "prop-types";
 import React from "react";
 import styled from 'styled-components';
 import ContentSite from "./content";
+import MenuButton from './menuButton';
 import SideMenu from "./sideMenu";
 
-
 const LayoutSite = ({ children }:any) => {
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -30,13 +31,12 @@ const LayoutSite = ({ children }:any) => {
       flex-direction: column !important;
     }
   `;
-
   return (
     <LayoutResponsive style={{minHeight: '100vh', background: '#DFE3EF'}}>
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
       <div style={{display: 'flex', alignItems: 'center', background: '#004AFF'}}>
         <SideMenu />
-        <button className="menu-button"/>
+        <MenuButton />
       </div>
       <ContentSite>
           <main>{children}</main>

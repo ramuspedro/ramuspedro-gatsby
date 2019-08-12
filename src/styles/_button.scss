@@ -1,4 +1,5 @@
 .menu-button {
+    cursor: pointer;
     display: block;
     border: none;
     background: transparent;
@@ -35,6 +36,18 @@
         top: 55%;
         width: 40%;
         transition: all 1.1s cubic-bezier(0.25, -0.09, 0.72, 1.47); 
+    }
+    &.active {
+        &:before {
+            transform: rotate(-45deg);
+            top: 50%;
+            transition: all 0.5s cubic-bezier(0.25, -0.09, 0.72, 1.47); 
+        }
+        &:after {
+            transform: rotate(45deg);
+            top: 50%;
+            transition: all 0.5s cubic-bezier(0.25, -0.09, 0.72, 1.47); 
+        }
     }
 }
 

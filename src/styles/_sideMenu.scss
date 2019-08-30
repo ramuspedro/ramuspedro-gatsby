@@ -1,21 +1,26 @@
 .side-menu {
-    list-style: none;
-    margin-bottom: 0;
-    padding-left: 0;
-    li {
-        color: $background;
-        text-transform: uppercase;
-        line-height: 2rem;
-        cursor: pointer;
-        &:hover {
-            background: $background;
-            color: $main-color;
-            font-family: $font-bold;
-        }
-        &.active {
-            background: $background;
-            color: $main-color;
-            font-family: $font-bold;
-        }
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+  li {
+    text-transform: uppercase;
+    line-height: 2rem;
+    cursor: pointer;
+    &:hover {
+      background: $background;
+      color: $main-color;
+      font-family: $font-bold;
     }
+  }
+  a {
+    color: white;
+    &.active {
+      background: $background;
+      color: $main-color;
+      font-family: $font-bold;
+      & > li {
+        background: $background;
+      }
+    }
+  }
 }
